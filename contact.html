@@ -101,31 +101,45 @@
 							<li><i class="icon-location"></i>Aligarh Muslim University, Aligarh IN 202002</li>
 							<li><i class="icon-old-phone"></i>Coming Soon...</li>
 							<li><i class="icon-mail22"></i><a href="mailto:olymp.acad@gmail.com">olymp.acad@gmail.com</a></li>
-							<li><i class="icon-globe2"></i><a href="https://olympiaacademia.github.io/">olympiaacademia.github.io/</a></li>
 						</ul>
 					</div>
 					<div class="col-md-7 col-md-push-1 animate-box">
 						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Name">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Email">
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<input action="mailto:mohammadnajeeb63@gmail.com" type="submit" value="Send Message//Not working add action!" class="btn btn-primary">
-								</div>
-							</div>
+
+<form id="contact-form" method="post" action="mailto:olymp.acad@gmail.com" role="form">
+
+    <div class="messages"></div>
+
+    <div class="controls">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Firstname is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for us" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-success btn-send" value="Send message">
+            </div>
+        </div>
+    </div>
+
+</form>
 						</div>
 					</div>
 				</div>
