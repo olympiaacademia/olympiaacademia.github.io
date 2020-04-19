@@ -17,22 +17,6 @@
         
         
     #more {display: none;}
-    
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less";
-    moreText.style.display = "inline";
-  }
-}
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -126,17 +110,38 @@ The so-called Pythagoreans, who were the first to take up mathematics, not only 
 – Aristotle,
 
 Metaphysica
+                        
+                            
+<p><a onclick="javascript:ShowHide('HiddenDiv')">read more</a></p>
+<div class="mid" id="HiddenDiv" style="display: none;"><font face="Arial" size="+2" 
 
-For thousands of years mathematics grew in a way that was tangible and “real.” Newton made great advances in physics by incorporating and expanding upon the differential calculus of his day. Einstein’s physical theories of space and time have their most natural exposition with the nineteenth century differential geometry of Poincaré. In the twentieth century, the gauge theory of particle physics and the mathematics of vector bundles grew side by side. The physicist Eugene Wigner called mathematics “unreasonably effective” in its ability to describe physics.
-<span id="dots">...</span><span id="more">
+color="#306Eff" align="right">For thousands of years mathematics grew in a way that was tangible and “real.” Newton made great advances in physics by incorporating and expanding upon the differential calculus of his day. Einstein’s physical theories of space and time have their most natural exposition with the nineteenth century differential geometry of Poincaré. In the twentieth century, the gauge theory of particle physics and the mathematics of vector bundles grew side by side. The physicist Eugene Wigner called mathematics “unreasonably effective” in its ability to describe physics.
 But developments of the twentieth century also fractured the math-physics bond. First was a mathematical tendency toward general, abstract mathematics (logic, topology, algebra, algebraic geometry). Second was the purely mathematical progress in fields which were originally tied to physics such as differential equations or geometry but were growing independently. Third was the maturation of particle theory (requiring no new mathematics) and eventual development of the so-called “standard model.” In 1972, the physicist Freeman Dyson had this to say:
 
 I am acutely aware of the fact that the marriage between mathematics and physics, which was so enormously fruitful in past centuries, has recently ended in divorce.
-</span></p>
-<button onclick="myFunction()" id="myBtn">Read more</button>
-– Freeman Dyson, Missed Opportunities, 1972<br><br>
+    – Freeman Dyson, Missed Opportunities, 1972<br><br>
                             Shad Azmi<br><br><br><br>
                             </p>
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{
+if(document.getElementById(divId).style.display == 'none')
+{
+document.getElementById(divId).style.display='block';
+}
+else
+{
+document.getElementById(divId).style.display = 'none';
+}
+}
+// ]]></script>
+    
+
+                            
+                            
+                            
+
 							<ul class="stuff">
 								<li><a href="files/blog1.pdf">Read More<i class="icon-arrow-right22"></i></a></li>
 							</ul>
