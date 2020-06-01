@@ -1,43 +1,36 @@
 <header>
 
 <!-- navbar -->
-  <nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-      <p class="navbar-text"></p>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-
-        {% if page.url == "/index.html" %}
-          <li class="active">
-          {% else %}
-          <li>
-        {% endif %}
-        <a href="{{ site.baseurl }}/">Home</a></li>
-
-        {% for p in site.pages %}
-          {% if p.title %}
-            {% if p.url == page.url %}
-              <li class="active">
-              {% else %}
-              <li>
-            {% endif %}
-            <a href="{{ p.url | prepend: site.baseurl }}"><span class="glyphicon {{ p.icon }}"></span> {{ p.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html">AMU</a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li class="has-dropdown">
+								<a>Resources</a>
+								<ul class="dropdown">
+									<li><a href="https://drive.google.com/drive/folders/1Hy3nKTEzWEn_XECjP8Dze9JrOdQ4QQBt">Notes</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1iftfBYOchKLb6rKVN3E5g0DSCDICCv-t">Papers</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1RlCykrB8yM-K9584FcnNrO_gOSkFTE66">Projects</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1Z0KcjedX2PtzyInqtc8wY1I3eKxrOV6K">More</a></li>
+								</ul>
+							</li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+                            <li><a href="members.html">Committee</a></li>
+							<li class="btn-cta"><a href="notice.html"><span>Join</span></a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
 
 </header>
