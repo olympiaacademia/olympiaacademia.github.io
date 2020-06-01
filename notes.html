@@ -1,13 +1,12 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-        
 <style>
 .collapsible {
   background-color: #777;
   color: white;
   cursor: pointer;
-  padding: 18px;
+  padding: 14px;
   width: 100%;
   border: none;
   text-align: left;
@@ -20,7 +19,7 @@
 }
 
 .content {
-  padding: 0 18px;
+  padding: 0 5px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
@@ -28,9 +27,45 @@
 }
 </style>
         
-	<meta charset="utf-8">
+    <!-- Custom Sidebar -->
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+    <!-- Custom Sidebar -->
+        
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+        
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163753987-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-163753987-1');
+    </script>
+    
+    <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Olympia Academia</title>
+	<title>Home &mdash; Olympia Academia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Olympia Academia Science Society" />
 	<meta name="keywords" content="Olympia Academia, amu science society, boolean autocrats, amu, aligarh muslim university, amu club, amu coders" />
@@ -80,24 +115,25 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html">AMU<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="index.html">AMU</a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li class="has-dropdown">
-								<a href="resources.html">Resources</a>
+								<a>Resources</a>
 								<ul class="dropdown">
-									<li><a href="#">Courses</a></li>
-									<li><a href="#">Papers</a></li>
-									<li><a href="#">Notes</a></li>
-									<li><a href="#">Others</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1Hy3nKTEzWEn_XECjP8Dze9JrOdQ4QQBt">Notes</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1iftfBYOchKLb6rKVN3E5g0DSCDICCv-t">Papers</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1RlCykrB8yM-K9584FcnNrO_gOSkFTE66">Projects</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1Z0KcjedX2PtzyInqtc8wY1I3eKxrOV6K">More</a></li>
 								</ul>
 							</li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="contact.html">Contact</a></li>
-							<li class="btn-cta"><a href="https://api.whatsapp.com/send?phone=919835633153&text=I%27m%20interested%20in%20Olympia%20Academia%20and%20I%20want%20to%20join%20this%20club.&source=&data=&app_absent="><span>Join</span></a></li>
+                            <li><a href="members.html">Committee</a></li>
+							<li class="btn-cta"><a href="notice.html"><span>Join</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -105,7 +141,54 @@
 			</div>
 		</div>
 	</nav>
+<br>
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>NOTES</h2>
+				</div>
+			</div>
+    
+<!--Content!-->
+ <div class="container">   
+     
+<p>B.Sc.(Hons.) - 1 SEM:</p>
+     
+<button class="collapsible">Calculus</button>
+<div class="content">
+<a href="">Unit 3</a><br>
+<a href="">Unit 4</a>
+</div>
+<button class="collapsible">Geometry</button>
+<div class="content">
+<a href="">B.Sc.(coordinate-I-II)-1</a><br>
+<a href="">Maths Geometry</a>
+</div>
+<button class="collapsible">Physics</button>
+<div class="content">
+<a href="">Physics I Sem. Mechanics</a><br>
+<a href="">Unit 1</a><br>
+<a href="">Unit 2</a>
+</div>
+     
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+<!--Content!-->
+        
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
             <div class="row copyright">
