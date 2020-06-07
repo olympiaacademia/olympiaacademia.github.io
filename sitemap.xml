@@ -9,42 +9,52 @@
 
 <url>
   <loc>https://olympiaacademia.github.io/</loc>
-  <lastmod>2020-04-21T18:32:25+00:00</lastmod>
+  <lastmod>2020-06-07T15:00:41+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://olympiaacademia.github.io/index.html</loc>
-  <lastmod>2020-04-21T18:32:25+00:00</lastmod>
+  <lastmod>2020-06-07T15:00:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://olympiaacademia.github.io/blog.html</loc>
-  <lastmod>2020-04-21T18:32:25+00:00</lastmod>
+  <lastmod>2020-06-07T15:00:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://olympiaacademia.github.io/covid.html</loc>
+  <lastmod>2020-06-07T15:00:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://olympiaacademia.github.io/about.html</loc>
-  <lastmod>2020-04-21T18:32:25+00:00</lastmod>
+  <lastmod>2020-06-07T15:00:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://olympiaacademia.github.io/contact.html</loc>
-  <lastmod>2020-04-21T18:32:25+00:00</lastmod>
+  <lastmod>2020-06-07T15:00:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://olympiaacademia.github.io/members.html</loc>
-  <lastmod>2020-04-21T18:32:25+00:00</lastmod>
+  <lastmod>2020-06-07T15:00:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://olympiaacademia.github.io/notice.html</loc>
-  <lastmod>2020-04-21T18:32:25+00:00</lastmod>
+  <lastmod>2020-06-07T15:00:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://olympiaacademia.github.io/files/blog1.pdf</loc>
-  <lastmod>2020-04-21T18:32:25+00:00</lastmod>
+  <lastmod>2020-06-07T15:00:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://olympiaacademia.github.io/iframe.html</loc>
+  <lastmod>2020-06-07T15:00:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
