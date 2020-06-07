@@ -1,20 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top justify-content-between">
-    <div class="container">
-        <a class="navbar-brand font-weight-bold" href="{{ site.baseurl }}{% link _pages/index.md %}">{{site.name}}</a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarContent" >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav ml-auto">
-            {% for item in site.data.nav %}
-                <li class="nav-item">
-                    <a href='{% if item.href contains ":" %}{% else %}{{ site.baseurl }}/{% endif %}{{ item.href }}'
-                       class="nav-link">
-                        {{ item.title }}
-                    </a>
-                </li>
-            {% endfor %}
-            </ul>
-        </div>
-    </div>
-</nav>
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html">AMU</a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li class="has-dropdown">
+								<a>Resources</a>
+								<ul class="dropdown">
+									<li><a href="https://drive.google.com/drive/folders/1Hy3nKTEzWEn_XECjP8Dze9JrOdQ4QQBt">Notes</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1iftfBYOchKLb6rKVN3E5g0DSCDICCv-t">Papers</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1RlCykrB8yM-K9584FcnNrO_gOSkFTE66">Projects</a></li>
+									<li><a href="https://drive.google.com/drive/folders/1Z0KcjedX2PtzyInqtc8wY1I3eKxrOV6K">More</a></li>
+								</ul>
+							</li>
+                            <li><a href="covid.html">COVID-19</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+                            <li><a href="members.html">Committee</a></li>
+							<li class="btn-cta"><a href="notice.html"><span>Join</span></a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
