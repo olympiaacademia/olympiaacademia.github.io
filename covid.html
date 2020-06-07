@@ -25,7 +25,7 @@
 }
 </style>
     <!-- Custom Sidebar -->
-        
+  
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -80,8 +80,12 @@
 	<![endif]-->
 
 	</head>
-	<body>
-		
+	<body onload="myFunction()">
+<script>
+function myFunction() {
+  alert("Source: covid19india");
+}
+</script>
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
@@ -94,7 +98,7 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li class="has-dropdown">
 								<a>Resources</a>
@@ -105,7 +109,7 @@
 									<li><a href="https://drive.google.com/drive/folders/1Z0KcjedX2PtzyInqtc8wY1I3eKxrOV6K">More</a></li>
 								</ul>
 							</li>
-                            <li><a href="about.html">COVID-19</a></li>
+                            <li class="active"><a href="about.html">COVID-19</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="contact.html">Contact</a></li>
                             <li><a href="members.html">Committee</a></li>
@@ -118,28 +122,9 @@
 		</div>
 	</nav>
 
-	<div id="fh5co-header" class="fh5co-cover js-fullheight" role="banner">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-                
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t js-fullheight">
-						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-                            <center><img src="images/logo.jpg" height="320" width="320"></center>
-                            <marquee>Do what you can, with what you have, where you are. Stay Safe! Stay at home! | Central Helpline Number for corona-virus: - +91-11-23978046
-                            </marquee>
-							<p><a class="btn btn-primary btn-lg btn-demo" href="notice.html"></i> Join</a><a class="btn btn-primary btn-lg btn-learn" href="blog.html">Latest Blogs</a></p><br>
-                            <p>The Olympia Academia is the Aligarh Muslim University Science Society, founded in 2019. Our purpose is to promote enjoyment and understanding of mathematics, physics, statistics and computer science for all students, and provide opportunities for cooperation and social activities.</p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
+<iframe allowtransparency="true"; src="https://www.covid19india.org/" width="100%" height="2680" style="border:none;">
+</iframe>        
+</div>        
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
             <div class="row copyright">
@@ -157,7 +142,12 @@
 			</div>
 
 		</div>
+        
 	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
 	</div>
 
 	<div class="gototop js-top">
