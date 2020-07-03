@@ -1,32 +1,28 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-<style>
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 14px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: #555;
-}
-
-.content {
-  padding: 0 5px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
-</style>
+<!--Password Protection !-->
         
+<SCRIPT language="JavaScript">
+<!--hide
+
+var password;
+
+var pass1="amu@ss";
+
+password=prompt('Resources are for members only. Please enter the password to continue.',' ');
+
+if (password==pass1)
+  alert('Password Correct! Click OK to enter!');
+else
+   {
+    window.location="index.html";
+    }
+
+//-->
+</SCRIPT>
+        
+<!-- END !-->
     <!-- Custom Sidebar -->
 <style>
 /* width */
@@ -50,7 +46,7 @@
 }
 </style>
     <!-- Custom Sidebar -->
-        
+  
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -58,14 +54,16 @@
     <link rel="manifest" href="/site.webmanifest">
         
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://raw.githubusercontent.com/jedfoster/Readmore.js/master/readmore.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163753987-1"></script>
     <script>
         window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-163753987-1');
     </script>
     
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Notes &mdash; Olympia Academia</title>
+	<title>Latest Blogs &mdash; Olympia Academia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Olympia Academia Science Society" />
 	<meta name="keywords" content="Olympia Academia, amu science society, boolean autocrats, amu, aligarh muslim university, amu club, amu coders" />
@@ -81,6 +79,20 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
+    
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
 
 	<!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">	 -->
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
@@ -120,8 +132,8 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="notes.html">Resources</a></li>
+							<li ><a href="blog.html">Blog</a></li>
+							<li class="active"><a href="notes.html">Resources</a></li>
                             <li><a href="covid.html">COVID-19</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="contact.html">Contact</a></li>
@@ -134,52 +146,11 @@
 			</div>
 		</div>
 	</nav>
-<br>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>NOTES</h2>
-				</div>
-			</div>
-    
+<br><br>
 <!--Content!-->
  <div class="container">   
-     
-<p>B.Sc.(Hons.) - 1 SEM:</p>
-     
-<button class="collapsible">Calculus</button>
-<div class="content">
-<a href="">Unit 3</a><br>
-<a href="">Unit 4</a>
+<iframe allowtransparency="true"; src="https://drive.google.com/embeddedfolderview?id=1FrnFcN61mrcN7dTPTUiA5j1faI7rsUE_#list" width="100%" height="1600" style="border:none;"></iframe>   
 </div>
-<button class="collapsible">Geometry</button>
-<div class="content">
-<a href="">B.Sc.(coordinate-I-II)-1</a><br>
-<a href="">Maths Geometry</a>
-</div>
-<button class="collapsible">Physics</button>
-<div class="content">
-<a href="">Physics I Sem. Mechanics</a><br>
-<a href="">Unit 1</a><br>
-<a href="">Unit 2</a>
-</div>
-     
-</div>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
-}
-</script>
 <!--Content!-->
         
 	<footer id="fh5co-footer" role="contentinfo">
