@@ -1,289 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Add your meta tags, stylesheets, and JavaScript libraries here -->
-
-  <!-- MD5 CDN STARTS-->
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-  <!-- MDB -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
-  <!-- MDB -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
-  <!-- MD5 CDN ENDS-->
-
-  <!--CUSTOM SCROLL BAR-->
-  <style>
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-
-    /* Add styles for the blog post cards */
-    .blog-card {
-      border: 1px solid #ccc;
-      padding: 20px;
-      margin-bottom: 20px;
-      margin-right: 20px;
-      margin-bottom: 20px;
-      width: calc(50% - 30px); /* Two blogs in one line, accounting for margins */
-      display: inline-block;
-      transition: transform 0.3s ease-in-out;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .blog-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Style the blog post titles */
-    .blog-card h2 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    /* Style the blog post content */
-    .blog-card-content {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #555;
-      display: none;
-    }
-
-    /* Style the blog post published date */
-    .blog-card-date {
-      font-size: 14px;
-      color: #888;
-      margin-top: 10px;
-    }
-
-    /* Add styles for the blog post images */
-    .blog-card img {
-      width: 100%;
-      height: 200px; /* Adjust the height as needed */
-      object-fit: cover;
-      object-position: center;
-    }
-
-    /* Add media query to adjust layout on smaller screens */
-    @media (max-width: 768px) {
-      .blog-card {
-        margin-right: 0;
-      }
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body style="background-color:whitesmoke; height:auto">
-
-<!--Navbar Starts-->
-<nav class="shadow-none navbar navbar-expand-lg navbar-light fixed-top" role="navigation"  style="background-color: whitesmoke; scroll-margin-bottom: 50px;">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarRightAlignExample"
-      aria-controls="navbarRightAlignExample"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-    <span class="navbar-brand mb-0 h1 font"><img src="images/logo_title.png" style="width: 40%; maxwidth:20%;height: auto;max-height: 40%;" class="img-fluid"  alt="Olympia Academia"/></span>
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-      <!-- Left links -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="blogs.html">Blogs</a></li>
-          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="committee.html">Committee</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"></a></li>
-      </ul>
-      <a href="join.html" role="button" class="btn btn-danger btn-md btn-rounded">Join</a>
-      <!-- Left links -->
-    </div>
-    <!-- Collapsible wrapper -->
-  </div>
-  <!-- Container wrapper -->
-</nav>
-<!--Navbar Ends-->
-
-<div class="d-flex justify-content-center" style="margin-top: 100px;">
-  <h1 class="display-6">Blogs</h1>
-</div>
-
-<div class="container" style="margin-top: 50px;">
-  <div class="row" id="blog-posts-container">
-    <!-- Blog posts will be dynamically added here -->
-  </div>
-  <div class="text-center">
-    <button id="load-more-btn" class="btn btn-primary">Load More</button>
-  </div>
-</div>
-
-<!-- Blog Post Modal -->
-<div class="modal fade" id="blogPostModal" tabindex="-1" aria-labelledby="blogPostModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="blogPostModalLabel"></h5>
-        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="modalBlogContent">
-        <!-- Blog post content will be dynamically added here -->
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Footer Starts-->
-<footer class="bg-light text-center text-lg-start">  
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: whitesmoke">
-    &#169; 2021 Copyright |
-    <a class="text-dark">Olympia Academia | </a>
-    <a class="text-dark" href="terms.html">Terms | </a>
-    <a class="text-dark" href="privacy.html">Privacy Policy</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!--Footer Ends-->
-
-<script>
-  // Replace 'YOUR_BLOGGER_API_KEY' with the actual API key you obtained from the Google Cloud Console.
+<!-- <  // Replace 'YOUR_BLOGGER_API_KEY' with the actual API key you obtained from the Google Cloud Console.
   const apiKey = 'AIzaSyBXIMOYRik5zZopD43C__Zvng_ge4u1b6k';
 
   // Replace 'YOUR_BLOGGER_BLOG_ID' with your Blogger blog ID. You can find it in the Blogger settings.
-  const blogId = '5335994726465821968';
+  const blogId = '5335994726465821968'; -->
 
-  // Set the number of posts to fetch per load.
-  const postsPerLoad = 5;
 
-  let startIndex = 0;
-
-  // Keep track of loaded blog post IDs to avoid duplicates
-  const loadedPostIds = [];
-
-  function loadBlogPosts() {
-    // Fetch blog posts using the Blogger API.
-    $.ajax({
-      url: `https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}&startIndex=${startIndex}&maxResults=${postsPerLoad}`,
-      type: 'GET',
-      dataType: 'json',
-      success: function (data) {
-        if (data.items) {
-          // Process the blog posts and display them on your website.
-          data.items.forEach(function (post) {
-            const postId = post.id;
-
-            // Check if the post is already loaded
-            if (loadedPostIds.includes(postId)) {
-              return; // Skip if already loaded
-            }
-
-            // Add the post ID to the loadedPostIds array
-            loadedPostIds.push(postId);
-
-            const postTitle = post.title;
-            const postContent = post.content;
-            const postDate = post.published;
-            const imageSrc = $(postContent).find('img:first').attr('src'); // Extract the first image URL from the post content
-
-            // Create a container for each blog post
-            const blogPostContainer = $('<div class="col-md-6 blog-card"></div>');
-
-            // Add the post title, image preview, and content
-            const postTitleElement = $('<h2></h2>').text(postTitle);
-            const postImageElement = $('<img src="' + imageSrc + '" alt="Blog Preview">');
-            const postContentElement = $('<div class="blog-card-content"></div>').html(postContent);
-            const postDateElement = $('<p class="blog-card-date"></p>').text(`Published on: ${postDate}`);
-
-            blogPostContainer.append(postTitleElement, postImageElement, postContentElement, postDateElement);
-
-            // Append the blog post container to the blog-posts-container
-            $('#blog-posts-container').append(blogPostContainer);
-          });
-
-          // Increment the startIndex for the next load
-          startIndex += postsPerLoad;
-
-          // Hide the "Load More" button if there are no more posts to load
-          if (startIndex >= data.totalItems) {
-            $('#load-more-btn').hide();
-          }
-        }
-      },
-      error: function (error) {
-        console.error('Error fetching blog posts:', error);
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- Add your meta tags, stylesheets, and JavaScript libraries here -->
+  
+    <!-- MD5 CDN STARTS-->
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+    <!-- MD5 CDN ENDS-->
+  
+    <!--CUSTOM SCROLL BAR-->
+    <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
       }
-    });
-  }
+  
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+  
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+  
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+  
+      /* Add styles for the blog post cards */
+      .blog-card {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        width: calc(50% - 30px); /* Two blogs in one line, accounting for margins */
+        display: inline-block;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+  
+      .blog-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+  
+      /* Style the blog post titles */
+      .blog-card h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+  
+      /* Style the blog post content */
+      .blog-card-content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+        display: none;
+      }
+  
+      /* Style the blog post published date */
+      .blog-card-date {
+        font-size: 14px;
+        color: #888;
+        margin-top: 10px;
+      }
+  
+      /* Add styles for the blog post images */
+      .blog-card img {
+        width: 100%;
+        height: 200px; /* Adjust the height as needed */
+        object-fit: cover;
+        object-position: center;
+      }
+  
+      /* Add media query to adjust layout on smaller screens */
+      @media (max-width: 768px) {
+        .blog-card {
+          margin-right: 0;
+        }
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body style="background-color:whitesmoke; height:auto">
+  
+  <!--Navbar Starts-->
+  <nav class="shadow-none navbar navbar-expand-lg navbar-light fixed-top" role="navigation"  style="background-color: whitesmoke; scroll-margin-bottom: 50px;">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarRightAlignExample"
+        aria-controls="navbarRightAlignExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <span class="navbar-brand mb-0 h1 font"><img src="images/logo_title.png" style="width: 40%; maxwidth:20%;height: auto;max-height: 40%;" class="img-fluid"  alt="Olympia Academia"/></span>
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+        <!-- Left links -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="blogs.html">Blogs</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="committee.html">Committee</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"></a></li>
+        </ul>
+        <a href="join.html" role="button" class="btn btn-danger btn-md btn-rounded">Join</a>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!--Navbar Ends-->
+  
+  <div class="d-flex justify-content-center" style="margin-top: 100px;">
+    <h1 class="display-6">Blogs</h1>
+  </div>
+  
+  <div class="container" style="margin-top: 50px;">
+    <div class="row" id="blog-posts-container">
+      <!-- Blog posts will be dynamically added here -->
+    </div>
+  </div>
+  
+  <!-- Blog Post Modal -->
+  <div class="modal fade" id="blogPostModal" tabindex="-1" aria-labelledby="blogPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="blogPostModalLabel"></h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBlogContent">
+          <!-- Blog post content will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer Starts-->
+  <footer class="bg-light text-center text-lg-start">  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: whitesmoke">
+      &#169; 2021 Copyright |
+      <a class="text-dark">Olympia Academia | </a>
+      <a class="text-dark" href="terms.html">Terms | </a>
+      <a class="text-dark" href="privacy.html">Privacy Policy</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer Ends-->
+  
+  <script>
+    // Replace 'YOUR_BLOGGER_API_KEY' with the actual API key you obtained from the Google Cloud Console.
+    const apiKey = 'AIzaSyBXIMOYRik5zZopD43C__Zvng_ge4u1b6k';
 
-  // Load the initial blog posts
-  loadBlogPosts();
-
-  // Load more posts when the "Load More" button is clicked
-  $('#load-more-btn').click(function () {
+    // Replace 'YOUR_BLOGGER_BLOG_ID' with your Blogger blog ID. You can find it in the Blogger settings.
+    const blogId = '5335994726465821968';
+  
+    // Set the number of posts to fetch per load.
+    const postsPerLoad = 50; // Set a large number to fetch all posts at once
+  
+    // Keep track of loaded blog post IDs to avoid duplicates
+    const loadedPostIds = [];
+  
+    function loadBlogPosts() {
+      // Fetch blog posts using the Blogger API.
+      $.ajax({
+        url: `https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}&maxResults=${postsPerLoad}`,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          if (data.items) {
+            // Process the blog posts and display them on your website.
+            data.items.forEach(function (post) {
+              const postId = post.id;
+  
+              // Check if the post is already loaded
+              if (loadedPostIds.includes(postId)) {
+                return; // Skip if already loaded
+              }
+  
+              // Add the post ID to the loadedPostIds array
+              loadedPostIds.push(postId);
+  
+              const postTitle = post.title;
+              const postContent = post.content;
+              const postDate = post.published;
+              const imageSrc = $(postContent).find('img:first').attr('src'); // Extract the first image URL from the post content
+  
+              // Create a container for each blog post
+              const blogPostContainer = $('<div class="col-md-6 blog-card"></div>');
+  
+              // Add the post title, image preview, and content
+              const postTitleElement = $('<h2></h2>').text(postTitle);
+              const postImageElement = $('<img src="' + imageSrc + '" alt="Blog Preview">');
+              const postContentElement = $('<div class="blog-card-content"></div>').html(postContent);
+              const postDateElement = $('<p class="blog-card-date"></p>').text(`Published on: ${postDate}`);
+  
+              blogPostContainer.append(postTitleElement, postImageElement, postContentElement, postDateElement);
+  
+              // Append the blog post container to the blog-posts-container
+              $('#blog-posts-container').append(blogPostContainer);
+            });
+          }
+        },
+        error: function (error) {
+          console.error('Error fetching blog posts:', error);
+        }
+      });
+    }
+  
+    // Load the blog posts
     loadBlogPosts();
-  });
-
-  // Open modal with blog post content when the blog card is clicked
-  $(document).on('click', '.blog-card', function () {
-    const postTitle = $(this).find('h2').text();
-    const postContent = $(this).find('.blog-card-content').html();
-
-    // Update the modal with blog post content
-    $('#blogPostModalLabel').text(postTitle);
-    $('#modalBlogContent').html(postContent);
-
-    // Show the modal
-    $('#blogPostModal').modal('show');
-  });
-
-  // Add hover effect to the blog post cards
-  $(document).on('mouseenter', '.blog-card', function () {
-    $(this).css('transform', 'scale(1.05)');
-    $(this).css('box-shadow', '0 6px 12px rgba(0, 0, 0, 0.1)');
-  });
-
-  $(document).on('mouseleave', '.blog-card', function () {
-    $(this).css('transform', 'scale(1)');
-    $(this).css('box-shadow', '0 4px 8px rgba(0, 0, 0, 0.1)');
-  });
-</script>
-
-</body>
-</html>
+  
+    // Open modal with blog post content when the blog card is clicked
+    $(document).on('click', '.blog-card', function () {
+      const postTitle = $(this).find('h2').text();
+      const postContent = $(this).find('.blog-card-content').html();
+  
+      // Update the modal with blog post content
+      $('#blogPostModalLabel').text(postTitle);
+      $('#modalBlogContent').html(postContent);
+  
+      // Show the modal
+      $('#blogPostModal').modal('show');
+    });
+  
+    // Add hover effect to the blog post cards
+    $(document).on('mouseenter', '.blog-card', function () {
+      $(this).css('transform', 'scale(1.05)');
+      $(this).css('box-shadow', '0 6px 12px rgba(0, 0, 0, 0.1)');
+    });
+  
+    $(document).on('mouseleave', '.blog-card', function () {
+      $(this).css('transform', 'scale(1)');
+      $(this).css('box-shadow', '0 4px 8px rgba(0, 0, 0, 0.1)');
+    });
+  </script>
+  
+  </body>
+  </html>
+  
