@@ -104,6 +104,42 @@
           margin-right: 0;
         }
       }
+
+      /* Custom Dropdown Styling */
+    .navbar .dropdown-menu {
+            background-color: #f3f5f7;
+            border: 10;
+            border-radius: 40;
+            box-shadow: black;
+            padding: 0;
+            display: none; /* Hide dropdown by default */
+            position: absolute;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown-menu a.dropdown-item {
+            color: #333;
+            padding: 10px 20px;
+            font-size: 16px;
+            display: block;
+            clear: both;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+            transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+        }
+
+        .navbar .dropdown-menu a.dropdown-item:hover {
+            background-color: #e9ecef;
+            color: #333;
+        }
+
+        .navbar .nav-item:hover .dropdown-menu {
+            display: block; /* Show dropdown when parent nav item is hovered */
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
@@ -134,7 +170,18 @@
             <li class="nav-item"><a class="nav-link active" href="blogs.html">Blogs</a></li>
             <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
             <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="navbarDropdownAbout" role="button"
+                aria-expanded="false">
+                About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
+                <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                <li><a class="dropdown-item" href="vision.html">Vision and Work</a></li>
+                <li><a class="dropdown-item" href="alumni.html">Notable Members</a></li>
+                <li><a class="dropdown-item" href="colab.html">Collaborations</a></li>
+            </ul>
+        </li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="committee.html">Team</a></li>
             <li class="nav-item"><a class="nav-link" href="#"></a></li>
